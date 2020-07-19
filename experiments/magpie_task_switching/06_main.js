@@ -32,12 +32,12 @@ $("document").ready(function() {
                 first_practice_inst,
                 first_practice,
                 second_practice_inst,
-                //second_practice,
+                second_practice,
                 third_practice_inst,
-                //third_practice,
+                third_practice,
                 experiment_inst,
-                //task_switching,
-                //post_test,
+                main_experiment,
+                post_test,
                 thanks
             ],
             // Here, you can specify all information for the deployment
@@ -55,7 +55,7 @@ $("document").ready(function() {
             progress_bar: {
                 in: [
                     // list the view-names of the views for which you want a progress bar
-                    
+                    'first_practice'
                 ],
                 // Possible styles are "default", "separate" and "chunks"
                 style: "separate",

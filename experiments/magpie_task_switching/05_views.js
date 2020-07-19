@@ -15,7 +15,6 @@
     * title: string - the title of this view
 
     * More about the properties and functions of the wrapping views - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/01_template_views/#wrapping-views
-
 */
 
 // Instantiate the used views
@@ -32,40 +31,57 @@ var second_practice;
 var third_practice;
 var main_experiment;
 
+// text for buttons
+var btn_txt = "next";
 
-// create the views *after* the language was set
+// Create the views *after* the language was set
 function create_views(){
 
   if (native_language === 'german') {
+    btn_txt = "Weiter...";
+
     // CREATE GERMAN VIEWS
-    //
-    //
-    // Every experiment should start with an intro view. Here you can welcome your participants and tell them what the experiment is about
     intro = magpieViews.view_generator("intro", {
       trials: 1,
       name: 'intro',
-      // If you use JavaScripts Template String `I am a Template String`, you can use HTML <></> and javascript ${} inside
       title:"Willkommen!",
-      text: `Das ist die Begrüßung für das 'task switching'-Experiment`,
-      buttonText: 'Weiter...'
+      text: `<b>Vielen Dank, dass Sie an unserem Experiment teilnehmen!</b><br>
+      <br>
+      Das Experiment wird insgesamt ungefähr <b>60 min</b> dauern. Stellen Sie bitte sicher, dass Sie das Experiment <b>ungestört ohne abgelenkt zu werden durchführen</b> können. 
+      Stellen Sie bitte Smartphone, Music etc. aus und versuchen Sie sich so gut wie möglich auf das Experiment zu konzentrieren.`,
+      buttonText: "Experiment beginnen"
     });
-    // For most tasks, you need instructions views
+    
     instructions = magpieViews.view_generator("instructions", {
       trials: 1,
       name: 'instructions',
       title: 'Generelle Einweisungen',
-      text: `Blablabla Einweisung
-                <br />
-                <br />
-                Worum gehts hier`,
-      buttonText: 'Weiter...'
+      text: `In diesem Experiment werden Sie <b>zwei</b> Aufgaben haben:<br><br>
+      Die erste Aufgabe besteht darin, sich eine Reihe von Konsonanten zu merken.<br>
+      Die zweite Aufgabe findet zwischen dem Anzeigen der einzelnen Buchstaben statt.<br><br>
+      Für diese Aufgabe werden Ihnen <b><span style="color: red;">rote</span></b> oder <b><span style="color: blue;">blaue</span></b> Zahlen angezeigt.<br><br>
+      Eine <b><span style="color: red;">rote</span></b> Nummer bedeutet, die Aufgabe ist eine <b>Größenordnungs</b> Aufgabe, bei der Sie entscheiden sollen, ob die gezeigte Zahl <b>kleiner oder größer als 5</b> ist. <br>
+      Dazu benutzen Sie die Pfeiltasten:
+      <br>Die <b>linke Pfeiltaste für Zahlen <5: ←</b><br>
+      und die
+      <b>rechte Pfeiltaste für Zahlen >5: →</b><br><br>
+      Eine <b><span style="color: blaue;">blue</span></b> Nummer bedeutet, die Aufgabe ist eine <b>Paritäts</b> Aufgabe. Hier sollen Sie entscheiden ob die Zahl <b>ungerade oder gerade</b> ist.<br>
+      Dazu benutzen Sie ebenfalls die Pfeiltasten:
+      <br>Die <b>linke Pfeiltaste für ungerade Zahlen: ←</b>
+      <br>und die
+      <b>rechte Pfeiltaste für gerade Zahlen: →</b><br><br>
+      Keine Sorge, bevor das eigentliche Experiment beginnt, werden Sie die verschiedenen Aufgaben Schritt für Schritt in 3 verschiedenen Übungen kennenlernen.`,
+      buttonText: btn_txt
     });
 
     first_practice_inst = magpieViews.view_generator("begin", {
       trials: 1,
       name: 'first_practice',
       title: '1. Übung',
-      text: `In der 1. Übung...`,
+      text: `Das ist der erste Übungsblock.<br><br>
+      In dieser Übung sollen Sie nur auf die gezeigten Konsonanten achten.<br>
+      Sie werden sehen wie das Experiment aufgebaut ist und können sich ein wenig aufwärmen.<br><br>
+      Also ignorieren Sie die gezeigten Zahlen und versuchen Sie nur sich die Buchstaben zu merken.</b>`,
       buttonText: 'Starte Übung'
     });
 
@@ -73,7 +89,20 @@ function create_views(){
       trials: 1,
       name: 'second_practice',
       title: '2. Übung',
-      text: '...',
+      text: `Das ist der zweite Übungsblock.<br><br>
+      Diesmal sollen Sie nur auf die gezeigten Zahlen achten und können die Buchstaben ignorieren.<br><br>
+      Beim ersten Durchgane werden nur <b><span style="color: red;">rote</span></b> Zahlen gezeigt. 
+      Sie sollen also entscheiden, ob die gezeigte Zahl 
+      <br><b>kleiner ←
+      <br>oder
+      <br>größer →
+      <br> als 5</b> ist.<br><br>
+      Im zweiten Durchgang werden die Zahlen <b><span style="color: blue;">blau</span></b> sein.
+      Hier sollen Sie entscheiden,  ob die Zahl
+      <br><b>ungerade ←
+      <br>oder
+      <br>gerade →</b> ist.<br><br>
+      Danach werden die Aufgabe vermischt und Sie sollen die richtige Entscheidung, abhängig von der Farbe, treffen.`,
       buttonText: 'Starte Übung'
     });
 
@@ -81,7 +110,9 @@ function create_views(){
       trials: 1,
       name: 'third_practice',
       title: '3. Übunge',
-      text: '...',
+      text: `Das ist die letzte Übung.<br><br>
+      Jetzt sollen Sie sich die Buchstaben merken <b>und</b> dabei die Zahlenaufgabe lösen.<br>
+      Diese Übung ist aufgebaut, wie der Rest des Experimentes.`,
       buttonText: 'Starte Übung'
     });
 
@@ -89,7 +120,9 @@ function create_views(){
       trials: 1,
       name: 'experiment',
       title: 'Experiment',
-      text: '...',
+      text: `Jetzt wissen Sie was Sie in dem Experiment erwartet und das richtige Experiment kann beginnen.<br><br>
+      Isgesamt werden Sie 32 Durchgänge mit jeweils 3-6 Konsonanten und verschiedenen Zahlenaufgabe (Größenordnung, Parität oder beides) bearbeiten.<br>
+      Der Ablauf ist der gleiche, wie in der letzten Übung.`,
       buttonText: 'Starte Experiment'
     });
 
@@ -98,7 +131,7 @@ function create_views(){
       trials: 1,
       name: 'post_test',
       title: 'Zusätzliche Information',
-      text: 'Die Beantwortung der folgenden Fragen ist optional, es hilft uns jedoch bei der weiteren Analyse Ihrer Ergebnisse.',
+      text: 'Die Beantwortung der folgenden Fragen ist optional, es hilft uns jedoch bei der späteren Analyse Ihrer Ergebnisse.',
 
       // You can change much of what appears here, e.g., to present it in a different language, as follows:
       buttonText: 'Weiter',
@@ -125,34 +158,46 @@ function create_views(){
     });
   } else {
     // CREATE ENGLISH VIEWS
-    //
-    //
-    // Every experiment should start with an intro view. Here you can welcome your participants and tell them what the experiment is about
     intro = magpieViews.view_generator("intro", {
       trials: 1,
       name: 'intro',
-      // If you use JavaScripts Template String `I am a Template String`, you can use HTML <></> and javascript ${} inside
-      text: `This is the introduction for the task switching experiment`,
-      buttonText: 'begin the experiment'
+      text: `<b>Thank you for participating in our experiment! </b><br>
+      <br>
+      You will need around <b>60 min</b> to complete the experiment. Please <b>make sure that you will not be distracted</b>. 
+      Switch off all messaging systems, your phone, any background music etc., and try to concentrate as much as possible on the task at hand.`,
+      buttonText: 'show instructions'
     });
 
-    // For most tasks, you need instructions views
     instructions = magpieViews.view_generator("instructions", {
       trials: 1,
       name: 'instructions',
       title: 'General Instructions',
-      text: `This is a sample instructions view.
-                <br />
-                <br />
-                Tell your participants what they are to do here.`,
-      buttonText: 'go to trials'
+      text: `In this experiment you have to do <b>two</b> tasks simultaniously:<br><br>
+      For the first task you will be shown a series of consonants, which you should try to memorize.<br>
+      Between the displaying of the single consonants, you have to do a second task.<br><br>
+      For this task you will be shown a series of numbers from 1 to 9 in either <b><span style="color: red;">red</span></b> or <b><span style="color: blue;">blue</span></b>.<br><br>
+      A <b><span style="color: red;">red</span></b> number indicates a <b>magnitude</b> task where your task is to decide if the shown number is <b>smaller or greater than 5</b>. <br>
+      To do this you press the
+      <br><b>left arrow key for smaller numbers: ←</b><br>
+      and the
+      <br><b>right arrow key for greater numbers: →</b><br><br>
+      A <b><span style="color: blue;">blue</span></b> number indicates a <b>parity</b> task where you have to decide if the number is <b>odd or even</b>.<br>
+      To do this you press the
+      <br><b>left arrow key for odd numbers: ←</b>
+      <br>and the
+      <br><b>right arrow key for even numbers: →</b><br><br>
+      Don’t worry, before we start the actual experiment we will have 3 different practices to get accustomed to the tasks one by one.`,
+      buttonText: btn_txt
     });
 
     first_practice_inst = magpieViews.view_generator("begin", {
       trials: 1,
       name: 'first_practice',
       title: 'Practice instructions',
-      text: `This is the first practice block. You picked: `,
+      text: `This is the first practice block.<br><br>
+      Here you only need to focus on the shown consonants.<br>
+      You will see how the experiment will look like and can warm up a bit.<br><br>
+      So don’t pay attention to the numbers and just try to <b>memorize the consonants</b>`,
       buttonText: 'Start practice block'
     });
 
@@ -160,7 +205,20 @@ function create_views(){
       trials: 1,
       name: 'second_practice',
       title: 'Practice instructions',
-      text: 'This is the second practice block.',
+      text: `This is the second practice block.<br><br>
+      Now your focus will be on the numbers and you can ignore the consonants.<br><br>
+      The first trial will only contain <b><span style="color: red;">red</span></b> numbers, 
+      so your task is to decide if the number is 
+      <br><b>smaller ←
+      <br>or
+      <br>greater →
+      <br> than 5</b>.<br><br>
+      The second trial will only contain <b><span style="color: blue;">blue</span></b> numbers,
+      then you have to decide if the number is
+      <br><b>odd ←
+      <br>or
+      <br>even →</b>.<br><br>
+      After that the tasks will be mixed and you have to make the right decision for the respective color.`,
       buttonText: 'Start practice block'
     });
 
@@ -168,7 +226,9 @@ function create_views(){
       trials: 1,
       name: 'third_practice',
       title: 'Practice instructions',
-      text: 'This is the last practice block.',
+      text: `This is the last practice.<br><br>
+      Now you have to memorize the consonants <b>and</b> work on the number tasks.<br>
+      This is how the rest of this experiment will look like.`,
       buttonText: 'Start practice block'
     });
 
@@ -176,7 +236,9 @@ function create_views(){
       trials: 1,
       name: 'experiment',
       title: 'Experiment instructions',
-      text: 'This is the real experiment.',
+      text: `Now that you know what to expect, the real experiment can begin.<br><br>
+      There will be 32 trials in total with 3-6 consonants per trial and with different number tasks (magnitude, parity or both).<br>
+      The procedure will be the same as in the last practice.`,
       buttonText: 'Start experiment'
     });
 
@@ -186,21 +248,6 @@ function create_views(){
       name: 'post_test',
       title: 'Additional information',
       text: 'Answering the following questions is optional, but your answers will help us analyze our results.'
-
-      // You can change much of what appears here, e.g., to present it in a different language, as follows:
-      // buttonText: 'Weiter',
-      // age_question: 'Alter',
-      // gender_question: 'Geschlecht',
-      // gender_male: 'männlich',
-      // gender_female: 'weiblich',
-      // gender_other: 'divers',
-      // edu_question: 'Höchster Bildungsabschluss',
-      // edu_graduated_high_school: 'Abitur',
-      // edu_graduated_college: 'Hochschulabschluss',
-      // edu_higher_degree: 'Universitärer Abschluss',
-      // languages_question: 'Muttersprache',
-      // languages_more: '(in der Regel die Sprache, die Sie als Kind zu Hause gesprochen haben)',
-      // comments_question: 'Weitere Kommentare'
     });
 
     // The 'thanks' view is crucial; never delete it; it submits the results!
@@ -208,7 +255,7 @@ function create_views(){
       trials: 1,
       name: 'thanks',
       title: 'Thank you for taking part in this experiment!',
-      prolificConfirmText: 'Press the button'
+      prolificConfirmText: 'Press the button to end the experiment'
     });
   }
   
@@ -235,29 +282,70 @@ function create_views(){
   * https://magpie-ea.github.io/magpie-docs/01_designing_experiments/01_template_views/#trial-views
   */
 
-  first_practice = custom_views.first_practice(
+  // Calculate complete number of trials for first practice
+  // Add type display and recall trial for each block
+  var first_practice_length = first_practice_data.length*2;
+  // Add consonant and digit trials per block: (1 consonant + 8 digits)*number of consonants
+  for (let trial of first_practice_data) {
+    first_practice_length += trial.seq_length*9;
+  }
+
+  // Calculate complete number of trials for second practice
+  // Add type display and recall trial for each block
+  var second_practice_length = second_practice_data.length*2;
+  // Add consonant and digit trials per block: (1 consonant + 8 digits)*number of consonants
+  for (let trial of second_practice_data) {
+    second_practice_length += trial.seq_length*9;
+  }
+
+  // Calculate complete number of trials for third practice
+  // Add type display and recall trial for each block
+  var third_practice_length = third_practice_data.length*2;
+  // Add consonant and digit trials per block: (1 consonant + 8 digits)*number of consonants
+  for (let trial of third_practice_data) {
+    third_practice_length += trial.seq_length*9;
+  }
+
+  // Calculate complete number of trials for main experiment
+  // Add type display and recall trial for each block
+  var main_trial_length = main_trial_data.length*2;
+  // Add consonant and digit trials per block: (1 consonant + 8 digits)*number of consonants
+  for (let trial of main_trial_data) {
+    main_trial_length += trial.seq_length*9;
+  }
+
+  first_practice = custom_views.task_switch(
     {
-      trials:1,
-      name:"first_practice"
+      trials:first_practice_length,
+      name:"first_practice",
+      data:first_practice_data,
+      buttonText: btn_txt
+    }
+  );
+  second_practice = custom_views.task_switch(
+    {
+      trials:second_practice_length,
+      name:"second_practice",
+      data:second_practice_data,
+      buttonText: btn_txt
     }
   );
 
-  /*
-  // Here, we initialize a normal forced_choice view
-  const task_switching = custom_views.main_experiment({
-    // This will use all trials specified in `data`, you can user a smaller value (for testing), but not a larger value
-    trials: trial_info.forced_choice.length,
-    // name should be identical to the variable name
-    name: 'forced_choice_2A',
-    data: trial_info.forced_choice,
-    // you can add custom functions at different stages through a view's life cycle
-    // hook: {
-    //     after_response_enabled: check_response
-    // }
-  });
-  */
-  // There are many more templates available:
-  // forced_choice, slider_rating, dropdown_choice, testbox_input, rating_scale, image_selection, sentence_choice,
-  // key_press, self_paced_reading and self_paced_reading_rating_scale
+  third_practice = custom_views.task_switch(
+    {
+      trials:third_practice_length,
+      name:"third_practice",
+      data:third_practice_data,
+      buttonText: btn_txt
+    }
+  );
 
+  main_experiment = custom_views.task_switch(
+    {
+      trials:main_trial_length,
+      name:"main_experiment",
+      data:main_trial_data,
+      buttonText: btn_txt
+    }
+  );
 }
