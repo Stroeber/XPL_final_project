@@ -47,7 +47,7 @@ function create_views(){
       title:"Willkommen!",
       text: `<b>Vielen Dank, dass Sie an unserem Experiment teilnehmen!</b><br>
       <br>
-      Das Experiment wird insgesamt ungefähr <b>60 min</b> dauern. Stellen Sie bitte sicher, dass Sie das Experiment <b>ungestört ohne abgelenkt zu werden durchführen</b> können. 
+      Das Experiment wird insgesamt ungefähr <b>60 min</b> dauern. Stellen Sie bitte sicher, dass Sie das Experiment <b>ungestört ohne abgelenkt zu werden</b> durchführen können. 
       Stellen Sie bitte Smartphone, Music etc. aus und versuchen Sie sich so gut wie möglich auf das Experiment zu konzentrieren.`,
       buttonText: "Experiment beginnen"
     });
@@ -65,7 +65,7 @@ function create_views(){
       <br>Die <b>linke Pfeiltaste für Zahlen <5: ←</b><br>
       und die
       <b>rechte Pfeiltaste für Zahlen >5: →</b><br><br>
-      Eine <b><span style="color: blaue;">blue</span></b> Nummer bedeutet, die Aufgabe ist eine <b>Paritäts</b> Aufgabe. Hier sollen Sie entscheiden ob die Zahl <b>ungerade oder gerade</b> ist.<br>
+      Eine <b><span style="color: blue;">blaue</span></b> Nummer bedeutet, die Aufgabe ist eine <b>Paritäts</b> Aufgabe. Hier sollen Sie entscheiden ob die Zahl <b>ungerade oder gerade</b> ist.<br>
       Dazu benutzen Sie ebenfalls die Pfeiltasten:
       <br>Die <b>linke Pfeiltaste für ungerade Zahlen: ←</b>
       <br>und die
@@ -172,9 +172,9 @@ function create_views(){
       trials: 1,
       name: 'instructions',
       title: 'General Instructions',
-      text: `In this experiment you have to do <b>two</b> tasks simultaniously:<br><br>
+      text: `In this experiment you have to do <b>two</b> tasks simultaneously:<br><br>
       For the first task you will be shown a series of consonants, which you should try to memorize.<br>
-      Between the displaying of the single consonants, you have to do a second task.<br><br>
+      Between the display of the single consonants, you have to do a second task.<br><br>
       For this task you will be shown a series of numbers from 1 to 9 in either <b><span style="color: red;">red</span></b> or <b><span style="color: blue;">blue</span></b>.<br><br>
       A <b><span style="color: red;">red</span></b> number indicates a <b>magnitude</b> task where your task is to decide if the shown number is <b>smaller or greater than 5</b>. <br>
       To do this you press the

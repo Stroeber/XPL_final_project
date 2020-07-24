@@ -38,7 +38,6 @@ function create_custom_views(){
             RT_list: _.fill(Array(8),NaN),  // Stores reaction times for current digit series
             res_list: _.fill(Array(8),NaN), // Stores responses for current digit series
             render: function (CT, magpie) {
-                console.log(CT,this.block_trial);
 
                 //waits for keypress or automatically continues to next view if participant takes to long (the first practice has no keypress trial)
                 function digit_task(){
@@ -206,7 +205,6 @@ function create_custom_views(){
                             view.trial_data.correctness = correctness;
                             // Save trial data of current block
                             magpie.trial_data.push(view.trial_data);
-                            console.log(view.trial_data);
 
                             // Clear trial data for next block
                             view.trial_data = {

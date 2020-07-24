@@ -68,8 +68,6 @@ function create_trials(){
             main_trial_data.push(create_trial(cons,letter_count,mixed_string,"mixed"));
         }
     }
-    console.log(first_practice_data);
-    console.log(main_trial_data);
 }    
 
 function create_trial(cons,letter_count,task_string,task){
