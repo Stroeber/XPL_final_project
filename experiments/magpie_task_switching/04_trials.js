@@ -32,7 +32,7 @@ function create_trials(){
         magnitude_string = `Größenordungs-Aufgaben`;
         parity_string = `Paritäts-Aufgaben`;
         mixed_string = `gemischte Aufgaben`;
-        continue_info = `zum starten Leertaste drücken`;
+        continue_info = `zum Starten Leertaste drücken`;
         recall_info = `Geben Sie jetzt die Konsonanten, die Sie sich gemerkt haben, in der Reihenfolge, in der diese gezeigt wurden, ein:
         <p style="font-size:x-large;text-align: center">Wenn Sie sich nicht mehr an einen Buchstaben erinnern können, drücken sie einfach die Leertaste</p>`;
     } else if (native_language==="english") {

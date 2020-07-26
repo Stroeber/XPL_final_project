@@ -91,7 +91,7 @@ function create_views(){
       title: '2. Übung',
       text: `Das ist der zweite Übungsblock.<br><br>
       Diesmal sollen Sie nur auf die gezeigten Zahlen achten und können die Buchstaben ignorieren.<br><br>
-      Beim ersten Durchgane werden nur <b><span style="color: red;">rote</span></b> Zahlen gezeigt. 
+      Beim ersten Durchgang werden nur <b><span style="color: red;">rote</span></b> Zahlen gezeigt. 
       Sie sollen also entscheiden, ob die gezeigte Zahl 
       <br><b>kleiner ←
       <br>oder
@@ -112,7 +112,7 @@ function create_views(){
       title: '3. Übunge',
       text: `Das ist die letzte Übung.<br><br>
       Jetzt sollen Sie sich die Buchstaben merken <b>und</b> dabei die Zahlenaufgabe lösen.<br>
-      Diese Übung ist aufgebaut, wie der Rest des Experimentes.`,
+      Diese Übung ist aufgebaut wie der Rest des Experimentes.`,
       buttonText: 'Starte Übung'
     });
 
