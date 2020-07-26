@@ -16,4 +16,4 @@ Contains notes from meetings, thoughts and everything that might be relevant but
 Contains all writing that is used in the final report (e.g. preregistration, experimental design, analyses etc.)  
 
 ## Link to the experiment  
-https://nostalgic-hawking-9e7003.netlify.app/
+https://group-12-task-switching.netlify.app/
