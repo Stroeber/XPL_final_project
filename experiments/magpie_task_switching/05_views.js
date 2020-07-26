@@ -121,7 +121,7 @@ function create_views(){
       name: 'experiment',
       title: 'Experiment',
       text: `Jetzt wissen Sie was Sie in dem Experiment erwartet und das richtige Experiment kann beginnen.<br><br>
-      Isgesamt werden Sie 12 Durchgänge mit jeweils 4-6 Konsonanten und verschiedenen Zahlenaufgabe (Größenordnung, Parität oder beides) bearbeiten.<br>
+      Insgesamt werden Sie 12 Durchgänge mit jeweils 4-6 Konsonanten und verschiedenen Zahlenaufgabe (Größenordnung, Parität oder beides) bearbeiten.<br>
       Der Ablauf ist der gleiche, wie in der letzten Übung.`,
       buttonText: 'Starte Experiment'
     });
