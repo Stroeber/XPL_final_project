@@ -47,7 +47,7 @@ function create_views(){
       title:"Willkommen!",
       text: `<b>Vielen Dank, dass Sie an unserem Experiment teilnehmen!</b><br>
       <br>
-      Das Experiment wird insgesamt ungefähr <b>60 min</b> dauern. Stellen Sie bitte sicher, dass Sie das Experiment <b>ungestört ohne abgelenkt zu werden</b> durchführen können. 
+      Das Experiment wird insgesamt ungefähr <b>10 min</b> dauern. Stellen Sie bitte sicher, dass Sie das Experiment <b>ungestört ohne abgelenkt zu werden</b> durchführen können. 
       Stellen Sie bitte Smartphone, Music etc. aus und versuchen Sie sich so gut wie möglich auf das Experiment zu konzentrieren.`,
       buttonText: "Experiment beginnen"
     });
@@ -121,7 +121,7 @@ function create_views(){
       name: 'experiment',
       title: 'Experiment',
       text: `Jetzt wissen Sie was Sie in dem Experiment erwartet und das richtige Experiment kann beginnen.<br><br>
-      Isgesamt werden Sie 32 Durchgänge mit jeweils 3-6 Konsonanten und verschiedenen Zahlenaufgabe (Größenordnung, Parität oder beides) bearbeiten.<br>
+      Isgesamt werden Sie 12 Durchgänge mit jeweils 4-6 Konsonanten und verschiedenen Zahlenaufgabe (Größenordnung, Parität oder beides) bearbeiten.<br>
       Der Ablauf ist der gleiche, wie in der letzten Übung.`,
       buttonText: 'Starte Experiment'
     });
@@ -163,7 +163,7 @@ function create_views(){
       name: 'intro',
       text: `<b>Thank you for participating in our experiment! </b><br>
       <br>
-      You will need around <b>60 min</b> to complete the experiment. Please <b>make sure that you will not be distracted</b>. 
+      You will need around <b>10 min</b> to complete the experiment. Please <b>make sure that you will not be distracted</b>. 
       Switch off all messaging systems, your phone, any background music etc., and try to concentrate as much as possible on the task at hand.`,
       buttonText: 'show instructions'
     });
@@ -237,7 +237,7 @@ function create_views(){
       name: 'experiment',
       title: 'Experiment instructions',
       text: `Now that you know what to expect, the real experiment can begin.<br><br>
-      There will be 32 trials in total with 3-6 consonants per trial and with different number tasks (magnitude, parity or both).<br>
+      There will be 12 trials in total with 4-6 consonants per trial and with different number tasks (magnitude, parity or both).<br>
       The procedure will be the same as in the last practice.`,
       buttonText: 'Start experiment'
     });
@@ -291,8 +291,8 @@ function create_views(){
   }
 
   // Calculate complete number of trials for second practice
-  // Add type display and recall trial for each block
-  var second_practice_length = second_practice_data.length*2;
+  // Add type display for each block (Second practice has no recall)
+  var second_practice_length = second_practice_data.length;
   // Add consonant and digit trials per block: (1 consonant + 8 digits)*number of consonants
   for (let trial of second_practice_data) {
     second_practice_length += trial.seq_length*9;

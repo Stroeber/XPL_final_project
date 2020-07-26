@@ -39,11 +39,16 @@ function create_trials(){
         var cons = eng_consonants;
     }
 
+    /*
     // Create 1. practice:
     // One trial for each length of letter series
     for(var letter_count = 3; letter_count<=6; letter_count++){
         first_practice_data.push(create_trial(cons,letter_count,practice_string,"magnitude"));
     }
+    */
+
+    // Create shorter 1. practice:
+    first_practice_data.push(create_trial(cons,3,practice_string,"magnitude"));
 
     // Create 2. practice:
     // One trial for each type of task
@@ -55,10 +60,11 @@ function create_trials(){
     // One mixed trial
     third_practice_data.push(create_trial(cons,3,mixed_string));
 
+    /*
     // Create main trials:
-    // 2 magnitude tasks
-    // 2 parity tasks
-    // 4 mixed tasks    
+    // 2 magnitude tasks 3-6 letters
+    // 2 parity tasks 3-6 letters
+    // 4 mixed tasks 3-6 letters
     for(var letter_count = 3; letter_count<=6; letter_count++){
         for(const i in _.range(2)){
             main_trial_data.push(create_trial(cons,letter_count,magnitude_string,"magnitude"));
@@ -68,6 +74,19 @@ function create_trials(){
             main_trial_data.push(create_trial(cons,letter_count,mixed_string,"mixed"));
         }
     }
+    */
+
+    // Create main trials:
+    // 1 magnitude tasks 4 - 6 lettters
+    // 1 parity tasks 4 - 6 lettters
+    // 1 mixed tasks 4 - 6 lettters
+    for(var letter_count = 4; letter_count<=6; letter_count++){
+            main_trial_data.push(create_trial(cons,letter_count,magnitude_string,"magnitude"));
+            main_trial_data.push(create_trial(cons,letter_count,parity_string,"parity"));
+            main_trial_data.push(create_trial(cons,letter_count,mixed_string,"mixed"));                   
+    }
+
+    main_trial_data = _.shuffle(main_trial_data);
 }    
 
 function create_trial(cons,letter_count,task_string,task){

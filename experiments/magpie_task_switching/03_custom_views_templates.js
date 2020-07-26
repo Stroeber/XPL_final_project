@@ -38,7 +38,6 @@ function create_custom_views(){
             RT_list: _.fill(Array(8),NaN),  // Stores reaction times for current digit series
             res_list: _.fill(Array(8),NaN), // Stores responses for current digit series
             render: function (CT, magpie) {
-
                 //waits for keypress or automatically continues to next view if participant takes to long (the first practice has no keypress trial)
                 function digit_task(){
                     const startingTime = Date.now();                    
@@ -76,6 +75,33 @@ function create_custom_views(){
                             }                
                         });    
                     }                
+                }
+
+                function end_block(){                    
+                    // Save trial data of current block
+                    magpie.trial_data.push(view.trial_data);
+
+                    // Clear trial data for next block
+                    view.trial_data = {
+                        trial_number : 0,
+                        trial_type: config.name,
+                        task_type: "",
+                        consonant_series: [],
+                        digit_series: [],
+                        colors: [],
+                        expected_keys: [],
+                        response: [],
+                        recall: [],
+                        recall_time: NaN,
+                        correctness: NaN,
+                        RT: []
+                    };
+                    
+                    // Reset digit and consonant count, set view to start with next block
+                    view.digit=0;
+                    view.consonant=0;
+                    view.current_block++;
+                    view.block_trial="title";
                 }
 
                 // Display the current view
@@ -141,7 +167,9 @@ function create_custom_views(){
                         // If all digits were shown, set next view to show the next consonant or the final recall trial (The second practice has no recall trial)
                         if (this.digit==8) {
                             this.consonant++;
-                            if (this.consonant==config.data[this.current_block].seq_length && this.name != "second_practice") {
+                            if (this.name === "second_practice") {
+                                end_block();
+                            } else if (this.consonant==config.data[this.current_block].seq_length) {
                                 this.block_trial="recall";
                             } else {
                                 this.block_trial="consonant";
@@ -203,30 +231,8 @@ function create_custom_views(){
                             view.trial_data.recall_time = recall_time;
                             view.trial_data.recall = recalled;            
                             view.trial_data.correctness = correctness;
-                            // Save trial data of current block
-                            magpie.trial_data.push(view.trial_data);
 
-                            // Clear trial data for next block
-                            view.trial_data = {
-                                trial_number : 0,
-                                trial_type: config.name,
-                                task_type: "",
-                                consonant_series: [],
-                                digit_series: [],
-                                colors: [],
-                                expected_keys: [],
-                                response: [],
-                                recall: [],
-                                recall_time: NaN,
-                                correctness: NaN,
-                                RT: []
-                            };
-                            
-                            // Reset digit and consonant count, set view to start with next block
-                            view.digit=0;
-                            view.consonant=0;
-                            view.current_block++;
-                            view.block_trial="title";
+                            end_block();
 
                             magpie.findNextView();
                         });  
