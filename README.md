@@ -13,4 +13,7 @@ Contains everything that is used to execute the experiment
 Contains notes from meetings, thoughts and everything that might be relevant but doesn't fit in other categories
 
 ## writing
-Contains all writing that is used in the final report (e.g. preregistration, experimental design, analyses etc.)
+Contains all writing that is used in the final report (e.g. preregistration, experimental design, analyses etc.)  
+
+## Link to the experiment  
+https://nostalgic-hawking-9e7003.netlify.app/
