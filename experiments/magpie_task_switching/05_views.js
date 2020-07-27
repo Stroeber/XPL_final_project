@@ -60,12 +60,12 @@ function create_views(){
       Die erste Aufgabe besteht darin, sich eine Reihe von Konsonanten zu merken.<br>
       Die zweite Aufgabe findet zwischen dem Anzeigen der einzelnen Buchstaben statt.<br><br>
       Für diese Aufgabe werden Ihnen <b><span style="color: red;">rote</span></b> oder <b><span style="color: blue;">blaue</span></b> Zahlen angezeigt.<br><br>
-      Eine <b><span style="color: red;">rote</span></b> Nummer bedeutet, die Aufgabe ist eine <b>Größenordnungs</b> Aufgabe, bei der Sie entscheiden sollen, ob die gezeigte Zahl <b>kleiner oder größer als 5</b> ist. <br>
+      Eine <b><span style="color: red;">rote</span></b> Nummer bedeutet, die Aufgabe ist eine <b>Größenordnungs</b>-Aufgabe, bei der Sie entscheiden sollen, ob die gezeigte Zahl <b>kleiner oder größer als 5</b> ist. <br>
       Dazu benutzen Sie die Pfeiltasten:
       <br>Die <b>linke Pfeiltaste für Zahlen <5: ←</b><br>
       und die
       <b>rechte Pfeiltaste für Zahlen >5: →</b><br><br>
-      Eine <b><span style="color: blue;">blaue</span></b> Nummer bedeutet, die Aufgabe ist eine <b>Paritäts</b> Aufgabe. Hier sollen Sie entscheiden ob die Zahl <b>ungerade oder gerade</b> ist.<br>
+      Eine <b><span style="color: blue;">blaue</span></b> Nummer bedeutet, die Aufgabe ist eine <b>Paritäts</b>-Aufgabe. Hier sollen Sie entscheiden ob die Zahl <b>ungerade oder gerade</b> ist.<br>
       Dazu benutzen Sie ebenfalls die Pfeiltasten:
       <br>Die <b>linke Pfeiltaste für ungerade Zahlen: ←</b>
       <br>und die
@@ -91,14 +91,14 @@ function create_views(){
       title: '2. Übung',
       text: `Das ist der zweite Übungsblock.<br><br>
       Diesmal sollen Sie nur auf die gezeigten Zahlen achten und können die Buchstaben ignorieren.<br><br>
-      Beim ersten Durchgang werden nur <b><span style="color: red;">rote</span></b> Zahlen gezeigt. 
+      Der erste Durchgang wird nur aus <b><span style="color: red;">Größenordnungsaufgaben</span></b> bestehen. 
       Sie sollen also entscheiden, ob die gezeigte Zahl 
       <br><b>kleiner ←
       <br>oder
       <br>größer →
       <br> als 5</b> ist.<br><br>
-      Im zweiten Durchgang werden die Zahlen <b><span style="color: blue;">blau</span></b> sein.
-      Hier sollen Sie entscheiden,  ob die Zahl
+      Im zweiten Durchgang werden die Aufgaben <b><span style="color: blue;">Paritätsaufgaben</span></b> sein.
+      Hier sollen Sie entscheiden, ob die Zahl
       <br><b>ungerade ←
       <br>oder
       <br>gerade →</b> ist.<br><br>
@@ -121,7 +121,7 @@ function create_views(){
       name: 'experiment',
       title: 'Experiment',
       text: `Jetzt wissen Sie was Sie in dem Experiment erwartet und das richtige Experiment kann beginnen.<br><br>
-      Insgesamt werden Sie 12 Durchgänge mit jeweils 4-6 Konsonanten und verschiedenen Zahlenaufgabe (Größenordnung, Parität oder beides) bearbeiten.<br>
+      Insgesamt werden Sie 12 Durchgänge mit jeweils 4-6 Konsonanten und verschiedenen Zahlenaufgabe (<b><span style="color: red;">Größenordnung</span>, <span style="color: blue;">Parität</span></b> oder beides) bearbeiten.<br>
       Der Ablauf ist der gleiche, wie in der letzten Übung.`,
       buttonText: 'Starte Experiment'
     });
@@ -175,7 +175,7 @@ function create_views(){
       text: `In this experiment you have to do <b>two</b> tasks simultaneously:<br><br>
       For the first task you will be shown a series of consonants, which you should try to memorize.<br>
       Between the display of the single consonants, you have to do a second task.<br><br>
-      For this task you will be shown a series of numbers from 1 to 9 in either <b><span style="color: red;">red</span></b> or <b><span style="color: blue;">blue</span></b>.<br><br>
+      For this task you will be shown a series of numbers from 1 to 9 in either <b><span style="color: red;">red</span> or <span style="color: blue;">blue</span></b>.<br><br>
       A <b><span style="color: red;">red</span></b> number indicates a <b>magnitude</b> task where your task is to decide if the shown number is <b>smaller or greater than 5</b>. <br>
       To do this you press the
       <br><b>left arrow key for smaller numbers: ←</b><br>
@@ -207,14 +207,14 @@ function create_views(){
       title: 'Practice instructions',
       text: `This is the second practice block.<br><br>
       Now your focus will be on the numbers and you can ignore the consonants.<br><br>
-      The first trial will only contain <b><span style="color: red;">red</span></b> numbers, 
+      The first trial will only contain <b><span style="color: red;">magnitude</span></b> tasks, 
       so your task is to decide if the number is 
       <br><b>smaller ←
       <br>or
       <br>greater →
       <br> than 5</b>.<br><br>
-      The second trial will only contain <b><span style="color: blue;">blue</span></b> numbers,
-      then you have to decide if the number is
+      The second trial will only contain <b><span style="color: blue;">parity</span></b> tasks.
+      You have to decide if the number is
       <br><b>odd ←
       <br>or
       <br>even →</b>.<br><br>
@@ -237,7 +237,7 @@ function create_views(){
       name: 'experiment',
       title: 'Experiment instructions',
       text: `Now that you know what to expect, the real experiment can begin.<br><br>
-      There will be 12 trials in total with 4-6 consonants per trial and with different number tasks (magnitude, parity or both).<br>
+      There will be 12 trials in total with 4-6 consonants per trial and with different number tasks (<b><span style="color: red;">magnitude</span>, <span style="color: blue;">parity</span></b> or both).<br>
       The procedure will be the same as in the last practice.`,
       buttonText: 'Start experiment'
     });
