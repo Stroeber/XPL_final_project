@@ -58,7 +58,7 @@ function create_trials(){
 
     // Create 3. practice:
     // One mixed trial
-    third_practice_data.push(create_trial(cons,3,mixed_string));
+    third_practice_data.push(create_trial(cons,3,mixed_string,"mixed"));
 
     /*
     // Create main trials:

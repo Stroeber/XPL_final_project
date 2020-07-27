@@ -77,7 +77,14 @@ function create_custom_views(){
                     }                
                 }
 
-                function end_block(){                    
+                function end_block(){  
+                    // Flatten multidimensional arrays to avoid submission error on server
+                    view.trial_data.digit_series = _.flattenDeep(view.trial_data.digit_series);
+                    view.trial_data.colors = _.flattenDeep(view.trial_data.colors);
+                    view.trial_data.expected_keys = _.flattenDeep(view.trial_data.expected_keys);
+                    view.trial_data.response = _.flattenDeep(view.trial_data.response);   
+                    view.trial_data.RT = _.flattenDeep(view.trial_data.RT);
+                    
                     // Save trial data of current block
                     magpie.trial_data.push(view.trial_data);
 
