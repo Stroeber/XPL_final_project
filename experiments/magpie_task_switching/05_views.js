@@ -56,20 +56,20 @@ function create_views(){
       trials: 1,
       name: 'instructions',
       title: 'Generelle Einweisungen',
-      text: `In diesem Experiment werden Sie <b>zwei</b> Aufgaben haben:<br><br>
+      text: `In diesem Experiment werden Sie <b>zwei</b> Aufgaben haben.<br><br>
       Die erste Aufgabe besteht darin, sich eine Reihe von Konsonanten zu merken.<br>
       Die zweite Aufgabe findet zwischen dem Anzeigen der einzelnen Buchstaben statt.<br><br>
-      Für diese Aufgabe werden Ihnen <b><span style="color: red;">rote</span></b> oder <b><span style="color: blue;">blaue</span></b> Zahlen angezeigt.<br><br>
-      Eine <b><span style="color: red;">rote</span></b> Nummer bedeutet, die Aufgabe ist eine <b>Größenordnungs</b>-Aufgabe, bei der Sie entscheiden sollen, ob die gezeigte Zahl <b>kleiner oder größer als 5</b> ist. <br>
+      In der zweiten Aufgabe werden Ihnen <b><span style="color: red;">rote</span></b> oder <b><span style="color: blue;">blaue</span></b> Zahlen angezeigt.<br><br>
+      Eine <b><span style="color: red;">rote</span></b> Nummer bedeutet, die Aufgabe ist eine <b>Größenordnungs</b>-Aufgabe, bei der Sie entscheiden sollen, ob die gezeigte Zahl <b>kleiner oder größer als 5</b> ist.<br>
       Dazu benutzen Sie die Pfeiltasten:
-      <br>Die <b>linke Pfeiltaste für Zahlen <5: ←</b><br>
+      <br>Die <b>linke Pfeiltaste für kleinere Zahlen: <span style="font-size:x-large">←</span></b><br>
       und die
-      <b>rechte Pfeiltaste für Zahlen >5: →</b><br><br>
+      <b>rechte Pfeiltaste für größere Zahlen: <span style="font-size:x-large">→</span></b><br><br>
       Eine <b><span style="color: blue;">blaue</span></b> Nummer bedeutet, die Aufgabe ist eine <b>Paritäts</b>-Aufgabe. Hier sollen Sie entscheiden ob die Zahl <b>ungerade oder gerade</b> ist.<br>
       Dazu benutzen Sie ebenfalls die Pfeiltasten:
-      <br>Die <b>linke Pfeiltaste für ungerade Zahlen: ←</b>
+      <br>Die <b>linke Pfeiltaste für ungerade Zahlen: <span style="font-size:x-large">←</span></b>
       <br>und die
-      <b>rechte Pfeiltaste für gerade Zahlen: →</b><br><br>
+      <b>rechte Pfeiltaste für gerade Zahlen: <span style="font-size:x-large">→</span></b><br><br>
       Keine Sorge, bevor das eigentliche Experiment beginnt, werden Sie die verschiedenen Aufgaben Schritt für Schritt in 3 verschiedenen Übungen kennenlernen.`,
       buttonText: btn_txt
     });
@@ -79,9 +79,9 @@ function create_views(){
       name: 'first_practice',
       title: '1. Übung',
       text: `Das ist der erste Übungsblock.<br><br>
+      Sie werden sehen wie das Experiment aufgebaut ist und können sich ein wenig aufwärmen.<br><br>      
       In dieser Übung sollen Sie nur auf die gezeigten Konsonanten achten.<br>
-      Sie werden sehen wie das Experiment aufgebaut ist und können sich ein wenig aufwärmen.<br><br>
-      Also ignorieren Sie die gezeigten Zahlen und versuchen Sie nur sich die Buchstaben zu merken.</b>`,
+      Ignorieren Sie die gezeigten Zahlen und versuchen Sie sich die Konsonanten zu merken.</b>`,
       buttonText: 'Starte Übung'
     });
 
@@ -90,18 +90,18 @@ function create_views(){
       name: 'second_practice',
       title: '2. Übung',
       text: `Das ist der zweite Übungsblock.<br><br>
-      Diesmal sollen Sie nur auf die gezeigten Zahlen achten und können die Buchstaben ignorieren.<br><br>
+      Diesmal sollen Sie nur auf die gezeigten Zahlen achten und können die Konsonanten ignorieren.<br><br>
       Der erste Durchgang wird nur aus <b><span style="color: red;">Größenordnungsaufgaben</span></b> bestehen. 
-      Sie sollen also entscheiden, ob die gezeigte Zahl 
-      <br><b>kleiner ←
+      Sie sollen entscheiden, ob die gezeigte Zahl 
+      <br><b>kleiner <span style="font-size:x-large">←</span> (linke Pfeiltaste)
       <br>oder
-      <br>größer →
+      <br>größer <span style="font-size:x-large">→</span> (rechte Pfeiltaste)
       <br> als 5</b> ist.<br><br>
       Im zweiten Durchgang werden die Aufgaben <b><span style="color: blue;">Paritätsaufgaben</span></b> sein.
       Hier sollen Sie entscheiden, ob die Zahl
-      <br><b>ungerade ←
+      <br><b>ungerade <span style="font-size:x-large">←</span> (linke Pfeiltaste)
       <br>oder
-      <br>gerade →</b> ist.<br><br>
+      <br>gerade <span style="font-size:x-large">→</span> (rechte Pfeiltaste)</b><br> ist.<br><br>
       Danach werden die Aufgabe vermischt und Sie sollen die richtige Entscheidung, abhängig von der Farbe, treffen.`,
       buttonText: 'Starte Übung'
     });
@@ -109,7 +109,7 @@ function create_views(){
     third_practice_inst = magpieViews.view_generator("begin", {
       trials: 1,
       name: 'third_practice',
-      title: '3. Übunge',
+      title: '3. Übung',
       text: `Das ist die letzte Übung.<br><br>
       Jetzt sollen Sie sich die Buchstaben merken <b>und</b> dabei die Zahlenaufgabe lösen.<br>
       Diese Übung ist aufgebaut wie der Rest des Experimentes.`,
@@ -120,9 +120,18 @@ function create_views(){
       trials: 1,
       name: 'experiment',
       title: 'Experiment',
-      text: `Jetzt wissen Sie was Sie in dem Experiment erwartet und das richtige Experiment kann beginnen.<br><br>
+      text: `Vielen Dank, dass Sie die Übungen gemacht haben. Sie können jetzt am Experiment teilnehmen.<br><br>
       Insgesamt werden Sie 12 Durchgänge mit jeweils 4-6 Konsonanten und verschiedenen Zahlenaufgabe (<b><span style="color: red;">Größenordnung</span>, <span style="color: blue;">Parität</span></b> oder beides) bearbeiten.<br>
-      Der Ablauf ist der gleiche, wie in der letzten Übung.`,
+      Der Ablauf ist der gleiche, wie in der letzten Übung.<br><br>
+      Bei <b><span style="color: red;">roten</span></b> Zahlen sollen Sie entscheiden, ob die gezeigte Zahl 
+      <br><b>kleiner <span style="font-size:x-large">←</span> (linke Pfeiltaste)
+      <br>oder
+      <br>größer <span style="font-size:x-large">→</span> (rechte Pfeiltaste)
+      <br> als 5</b> ist.<br><br>
+      Bei <b><span style="color: blue;">blauen</span></b> Zahlen sollen Sie entscheiden, ob die Zahl
+      <br><b>ungerade <span style="font-size:x-large">←</span> (linke Pfeiltaste)
+      <br>oder
+      <br>gerade <span style="font-size:x-large">→</span> (rechte Pfeiltaste)</b><br> ist.`,
       buttonText: 'Starte Experiment'
     });
 
@@ -172,20 +181,20 @@ function create_views(){
       trials: 1,
       name: 'instructions',
       title: 'General Instructions',
-      text: `In this experiment you have to do <b>two</b> tasks simultaneously:<br><br>
+      text: `In this experiment you have to do <b>two</b> tasks simultaneously.<br><br>
       For the first task you will be shown a series of consonants, which you should try to memorize.<br>
       Between the display of the single consonants, you have to do a second task.<br><br>
-      For this task you will be shown a series of numbers from 1 to 9 in either <b><span style="color: red;">red</span> or <span style="color: blue;">blue</span></b>.<br><br>
-      A <b><span style="color: red;">red</span></b> number indicates a <b>magnitude</b> task where your task is to decide if the shown number is <b>smaller or greater than 5</b>. <br>
-      To do this you press the
-      <br><b>left arrow key for smaller numbers: ←</b><br>
+      For the second task you will be shown a series of numbers from 1 to 9 in either <b><span style="color: red;">red</span> or <span style="color: blue;">blue</span></b>.<br><br>
+      A <b><span style="color: red;">red</span></b> number indicates a <b>magnitude</b> task where you have to decide if the shown number is <b>smaller or greater than 5</b>. <br>
+      To do this, you press the
+      <br><b>left arrow key for smaller numbers: <span style="font-size:x-large">←</span></b><br>
       and the
-      <br><b>right arrow key for greater numbers: →</b><br><br>
+      <br><b>right arrow key for greater numbers: <span style="font-size:x-large">→</span></b><br><br>
       A <b><span style="color: blue;">blue</span></b> number indicates a <b>parity</b> task where you have to decide if the number is <b>odd or even</b>.<br>
-      To do this you press the
-      <br><b>left arrow key for odd numbers: ←</b>
+      To do this, you press the
+      <br><b>left arrow key for odd numbers: <span style="font-size:x-large">←</span></b>
       <br>and the
-      <br><b>right arrow key for even numbers: →</b><br><br>
+      <br><b>right arrow key for even numbers: <span style="font-size:x-large">→</span></b><br><br>
       Don’t worry, before we start the actual experiment we will have 3 different practices to get accustomed to the tasks one by one.`,
       buttonText: btn_txt
     });
@@ -193,39 +202,39 @@ function create_views(){
     first_practice_inst = magpieViews.view_generator("begin", {
       trials: 1,
       name: 'first_practice',
-      title: 'Practice instructions',
+      title: 'Practice Instructions',
       text: `This is the first practice block.<br><br>
+      You will see how the experiment will look like, and you can warm up a bit.<br><br>      
       Here you only need to focus on the shown consonants.<br>
-      You will see how the experiment will look like and can warm up a bit.<br><br>
-      So don’t pay attention to the numbers and just try to <b>memorize the consonants</b>`,
+      Don’t pay attention to the numbers and try to <b>memorize the consonants.</b>`,
       buttonText: 'Start practice block'
     });
 
     second_practice_inst = magpieViews.view_generator("begin", {
       trials: 1,
       name: 'second_practice',
-      title: 'Practice instructions',
+      title: 'Practice Instructions',
       text: `This is the second practice block.<br><br>
       Now your focus will be on the numbers and you can ignore the consonants.<br><br>
       The first trial will only contain <b><span style="color: red;">magnitude</span></b> tasks, 
       so your task is to decide if the number is 
-      <br><b>smaller ←
+      <br><b>smaller <span style="font-size:x-large">←</span> (left arrow key)
       <br>or
-      <br>greater →
+      <br>greater <span style="font-size:x-large">→</span> (right arrow key)
       <br> than 5</b>.<br><br>
       The second trial will only contain <b><span style="color: blue;">parity</span></b> tasks.
       You have to decide if the number is
-      <br><b>odd ←
+      <br><b>odd <span style="font-size:x-large">←</span> (left arrow key)
       <br>or
-      <br>even →</b>.<br><br>
-      After that the tasks will be mixed and you have to make the right decision for the respective color.`,
+      <br>even <span style="font-size:x-large">→</span> (right arrow key)</b>.<br><br>
+      After that, the tasks will be mixed, and you have to make the right decision for the respective color.`,
       buttonText: 'Start practice block'
     });
 
     third_practice_inst = magpieViews.view_generator("begin", {
       trials: 1,
       name: 'third_practice',
-      title: 'Practice instructions',
+      title: 'Practice Instructions',
       text: `This is the last practice.<br><br>
       Now you have to memorize the consonants <b>and</b> work on the number tasks.<br>
       This is how the rest of this experiment will look like.`,
@@ -235,10 +244,19 @@ function create_views(){
     experiment_inst = magpieViews.view_generator("begin", {
       trials: 1,
       name: 'experiment',
-      title: 'Experiment instructions',
-      text: `Now that you know what to expect, the real experiment can begin.<br><br>
+      title: 'Experiment Instructions',
+      text: `Thank you for doing the practice trials. You may now continue with the experiment trials.<br><br>
       There will be 12 trials in total with 4-6 consonants per trial and with different number tasks (<b><span style="color: red;">magnitude</span>, <span style="color: blue;">parity</span></b> or both).<br>
-      The procedure will be the same as in the last practice.`,
+      The procedure will be the same as in the last practice.<br><br>
+      For <b><span style="color: red;">red</span></b> numbers you have to decide if the number is
+      <br><b>smaller <span style="font-size:x-large">←</span> (left arrow key)
+      <br>or
+      <br>greater <span style="font-size:x-large">→</span> (right arrow key)
+      <br> than 5</b>.<br><br>
+      For <b><span style="color: blue;">blue</span></b> numbers you have to decide if the number is
+      <br><b>odd <span style="font-size:x-large">←</span> (left arrow key)
+      <br>or
+      <br>even <span style="font-size:x-large">→</span> (right arrow key)</b>.`,
       buttonText: 'Start experiment'
     });
 
