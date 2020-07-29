@@ -121,7 +121,7 @@ function create_views(){
       name: 'experiment',
       title: 'Experiment',
       text: `Vielen Dank, dass Sie die Übungen gemacht haben. Sie können jetzt am Experiment teilnehmen.<br><br>
-      Insgesamt werden Sie 12 Durchgänge mit jeweils 4-6 Konsonanten und verschiedenen Zahlenaufgabe (<b><span style="color: red;">Größenordnung</span>, <span style="color: blue;">Parität</span></b> oder beides) bearbeiten.<br>
+      Insgesamt werden Sie 9 Durchgänge mit jeweils 4-6 Konsonanten und verschiedenen Zahlenaufgabe (<b><span style="color: red;">Größenordnung</span>, <span style="color: blue;">Parität</span></b> oder beides) bearbeiten.<br>
       Der Ablauf ist der gleiche, wie in der letzten Übung.<br><br>
       Bei <b><span style="color: red;">roten</span></b> Zahlen sollen Sie entscheiden, ob die gezeigte Zahl 
       <br><b>kleiner <span style="font-size:x-large">←</span> (linke Pfeiltaste)
@@ -246,7 +246,7 @@ function create_views(){
       name: 'experiment',
       title: 'Experiment Instructions',
       text: `Thank you for doing the practice trials. You may now continue with the experiment trials.<br><br>
-      There will be 12 trials in total with 4-6 consonants per trial and with different number tasks (<b><span style="color: red;">magnitude</span>, <span style="color: blue;">parity</span></b> or both).<br>
+      There will be 9 trials in total with 4-6 consonants per trial and with different number tasks (<b><span style="color: red;">magnitude</span>, <span style="color: blue;">parity</span></b> or both).<br>
       The procedure will be the same as in the last practice.<br><br>
       For <b><span style="color: red;">red</span></b> numbers you have to decide if the number is
       <br><b>smaller <span style="font-size:x-large">←</span> (left arrow key)
